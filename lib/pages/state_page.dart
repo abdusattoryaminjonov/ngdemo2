@@ -1,24 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class StatePage extends StatelessWidget {
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-
-  int count=0;
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
         centerTitle: true,
-        title: Text("Korzinka"),
+        title: Text("Korzinka-Stateless"),
         actions: [
           Icon(Icons.shopping_basket),
           SizedBox(width: 10,),
@@ -27,15 +19,13 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Center(
-        child: Text("Welcome to Home\n ${count}"),
+        child: Text("Welcome to Home ${count}"),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
         child: Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            count++;
-          });
+        onPressed: (){
+          count++;
         },
       ),
     );
